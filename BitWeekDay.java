@@ -1,9 +1,9 @@
 public static class BitWeekDay {
         private static final int WEEK_BITS = 3;
         private static final int HOUR_BITS = 4;
-        private static final int Hour_PERIOD_BITS = 1;
+        private static final int HOUR_PERIOD_BITS = 1;
 
-        private static final int HOUR_LEFT_SHIFT_BITS = Hour_PERIOD_BITS;
+        private static final int HOUR_LEFT_SHIFT_BITS = HOUR_PERIOD_BITS;
         private static final int WEEK_LEFT_SHIFT_BITS = HOUR_LEFT_SHIFT_BITS + HOUR_BITS;
 
         public static int toBits(int week, int hour) {
@@ -33,6 +33,6 @@ public static class BitWeekDay {
         }
 
         private static int getHourPeriod(int bits) {
-            return bits & ((1 << Hour_PERIOD_BITS) - 1);
+            return bits & ((1 << HOUR_PERIOD_BITS) - 1);
         }
     }
